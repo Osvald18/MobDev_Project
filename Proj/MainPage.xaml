@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proj.MainPage">
+    
+            <VerticalStackLayout 
+                Padding="30,0"
+                Spacing="25"
+                VerticalOptions="Center">
+                
+                <Label Text="Retrivo." FontSize="50" TextColor="Black" HorizontalTextAlignment="Center" Margin="0,0,0,80"/>
+                
+                <Border Stroke = "gray" StrokeThickness="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="45,45,45,45" />
+                </Border.StrokeShape>
+                <Entry Placeholder="Username" Margin="10,0,10,0" TextColor="Black"/>
+            </Border>
+            
+            <Border Stroke = "gray" StrokeThickness="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="45,45,45,45" />
+                </Border.StrokeShape>
+                <Entry Placeholder="Password" Margin="10,0,10,0" TextColor="Black"/>
+            </Border>
+                
+                <HorizontalStackLayout
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    >
+                    <CheckBox />
+                    <Label Text = "Remember me" VerticalOptions="Center" FontSize="15" />
+                    
+                </HorizontalStackLayout>
+                
+                
+            
+            <Border>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="45,45,45,45"/>
+                </Border.StrokeShape>
+                <Button
+                    x:Name="LoginBtn"
+                    Text="Login" 
+                    Clicked="OnCounterClicked"
+                    HorizontalOptions="Fill" /> 
+            </Border>
+                
+            </VerticalStackLayout>
+    
+</ContentPage>
