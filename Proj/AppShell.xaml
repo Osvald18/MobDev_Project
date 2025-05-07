@@ -5,15 +5,38 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Proj"
     Shell.FlyoutBehavior="Flyout"
+    Shell.NavBarIsVisible="False">
+
+    <!-- Set LostItems as the homepage -->
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:LostItems}"
+        Route="MainPage" />
+
+    <!-- ItemDetails route -->
+    <ShellContent
+        Route="itemdetails"
+        ContentTemplate="{DataTemplate local:ItemDetails}" />
+</Shell>
+
+<!--
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Proj.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Proj"
+    Shell.FlyoutBehavior="Flyout"
     Shell.NavBarIsVisible="False"
     Title="Proj"
     >
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:ReportForm_Found_}"
+        ContentTemplate="{DataTemplate local:LostItems}"
         Route="MainPage" />
+    
+    <ShellContent Route="itemdetails" ContentTemplate="{DataTemplate local:ItemDetails}" /> 
 
 </Shell>
-
-
+-->

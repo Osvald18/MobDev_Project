@@ -8,7 +8,12 @@
                 Spacing="25"
                 VerticalOptions="Center">
                 
-                <Label Text="Retrivo." FontSize="50" TextColor="Black" HorizontalTextAlignment="Center" Margin="0,0,0,80"/>
+                <Image
+                    Source="retrivo_logo.png"
+                    HeightRequest="185"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+                <Label Text="Retrivo" FontSize="50" TextColor="Black" HorizontalTextAlignment="Center" Margin="0,0,0,80"/>
                 
                 <Border Stroke = "gray" StrokeThickness="2">
                 <Border.StrokeShape>
@@ -32,9 +37,6 @@
                     <Label Text = "Remember me" VerticalOptions="Center" FontSize="15" />
                     
                 </HorizontalStackLayout>
-                
-                
-            
             <Border>
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="45,45,45,45"/>

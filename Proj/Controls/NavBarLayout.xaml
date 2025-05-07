@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proj.Controls.NavBarLayout"
+             BackgroundColor="Transparent"
+             Padding="0">
+
+    <Frame HasShadow="True"
+           CornerRadius="0"
+           Padding="0"
+           Margin="0"
+           IsClippedToBounds="True"
+           BackgroundColor="Transparent">
+
+        <Grid ColumnDefinitions="Auto,*,Auto"
+              HeightRequest="70"
+              VerticalOptions="Start">
+
+            <!-- Properly defined gradient background -->
+            <BoxView Grid.ColumnSpan="3"
+                     CornerRadius="0">
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#003366" Offset="0.0" />
+                        <GradientStop Color="#3366cc" Offset="1.0" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+
+            <!-- Back Button -->
+            <Image Source="back.png"
+                   WidthRequest="30"
+                   HeightRequest="30"
+                   Margin="20,0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!-- App Title -->
+            <Label Text="Retrivo"
+                   Grid.Column="1"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="28"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   FontFamily="OpenSansSemibold" />
+
+            <!-- Optional Profile Icon -->
+            <!--
+            <Image Source="profile_icon.png"
+                   Grid.Column="2"
+                   WidthRequest="30"
+                   HeightRequest="30"
+                   Margin="20,0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="End"/>
+            -->
+        </Grid>
+    </Frame>
+</ContentView>
+
+
+
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proj.Controls.NavBarLayout">
+
+    <Grid Padding="15" ColumnDefinitions="Auto,*,Auto" VerticalOptions="Start" BackgroundColor="MediumBlue">
+        
+        <Image Source="back.png" WidthRequest="24" HeightRequest="24">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding BackCommand}" />
+            </Image.GestureRecognizers>
+        </Image>
+        
+        ~1~ App Title @1@
+        <Label Text="Retrivo"
+               Grid.Column="1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="30"
+               TextColor="Azure"
+               FontAttributes="Bold" />
+
+        ~1~ Profile Icon 
+        <Image Source="profile_icon.png"
+               Grid.Column="2"
+               HeightRequest="24"
+               WidthRequest="24"
+               VerticalOptions="Center"
+               HorizontalOptions="End" /> @1@
+    </Grid>
+</ContentView>-->

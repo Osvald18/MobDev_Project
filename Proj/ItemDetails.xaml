@@ -1,0 +1,64 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proj.ItemDetails"
+             xmlns:views="clr-namespace:Proj.Controls"
+             Title="Item Details">
+
+        <Grid RowDefinitions="Auto,*">
+            
+            <!-- Custom NavBar -->
+            <views:NavBarLayout Grid.Row="0" />
+            
+        <ScrollView Grid.Row="1">
+        <VerticalStackLayout Padding="20" Spacing="20">
+            
+
+            <!-- Image Section -->
+            <Frame CornerRadius="10" HasShadow="True" Padding="0" BackgroundColor="White">
+                <Image x:Name="ItemImage" Aspect="AspectFill" HeightRequest="200"/>
+            </Frame>
+            
+            <!--~1~ Back and Next Navigation @1@
+            <Grid ColumnDefinitions="*,*" Padding="10,0">
+                <Button Text="⬅" Clicked="OnBackClicked" HorizontalOptions="Start"/>
+                <Button Text="➡" Clicked="OnNextClicked" Grid.Column="1" HorizontalOptions="End"/>
+            </Grid>-->
+
+            <!-- Information Section -->
+            <Frame CornerRadius="15" BackgroundColor="LightGray" Padding="15" BorderColor="Gray">
+                <VerticalStackLayout Spacing="15">
+                    <Label x:Name="ItemName" FontSize="24" FontAttributes="Bold"/>
+                    <Label Text="INFORMATION:" FontSize="18" FontAttributes="Bold"/>
+                    
+                    <Border Stroke = "gray" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15,15,15,15" />
+                        </Border.StrokeShape>
+                        <Editor x:Name="ItemDescription" 
+                                Placeholder="Read description here (eg: colour, company)" 
+                                AutoSize="TextChanges"
+                                BackgroundColor="#F5F5F5"
+                                HeightRequest="100" />
+                    </Border>
+
+                    <VerticalStackLayout>
+                        <Label Text="Date Found :" FontAttributes="Bold" />
+                        <Label x:Name="ItemDate" TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <Label Text="Location Found :" FontAttributes="Bold" />
+                        <Label x:Name="ItemLocation" TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <Label Text="Found by :" FontAttributes="Bold" />
+                        <Label x:Name="ItemFounded" TextColor="Black" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    </Grid>
+</ContentPage>

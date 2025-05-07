@@ -1,0 +1,76 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Proj.ViewModels"
+             xmlns:views="clr-namespace:Proj.Controls"
+             x:Class="Proj.LostItems"
+             BackgroundColor="White"
+             Title="Lost Items">
+
+    
+    <ContentPage.BindingContext>
+        <viewmodels:LostItemsViewModel />
+    </ContentPage.BindingContext>
+    
+    <Grid RowDefinitions="Auto,*">
+        <views:NavBarLayout /> 
+    <ScrollView Grid.Row="1">
+        
+        <VerticalStackLayout Padding="20"> 
+            
+            <!-- Filters -->
+            <VerticalStackLayout Spacing="5" Padding="0,25,0,15">
+                <Border Stroke="gray" StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="30,30,30,30" />
+                    </Border.StrokeShape>
+                    <SearchBar Placeholder="Search items..." />
+                </Border>
+                <Picker Title="Category" WidthRequest="200" HorizontalOptions="Start">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>All Items</x:String>
+                            <x:String>Electronics</x:String>
+                            <x:String>Bags</x:String>
+                            <x:String>Bottles</x:String>
+                            <x:String>Jewelry</x:String>
+                            <x:String>Miscellaneous</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </VerticalStackLayout>
+
+            <!-- Collection View -->
+            <CollectionView ItemsSource="{Binding LostItems}" Margin="0,10,0,0">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2"
+                                     HorizontalItemSpacing="10"
+                                     VerticalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="0" HasShadow="False" BorderColor="#ddd" CornerRadius="8"
+                               HeightRequest="150" WidthRequest="150" HorizontalOptions="Center">
+                            <Image Source="{Binding Image}"
+                                   HeightRequest="150"
+                                   WidthRequest="150"
+                                   Aspect="AspectFill"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ItemTappedCommand}"
+                                        CommandParameter="{Binding}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+        </Grid>
+</ContentPage>
+

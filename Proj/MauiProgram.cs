@@ -34,7 +34,28 @@ public static class MauiProgram
             handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
 #endif
         });
+        
+        EditorHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
+        {
+#if ANDROID
+            if (handler.PlatformView is Android.Widget.EditText nativeEditor)
+            {
+                // Remove underline
+                nativeEditor.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
 
+                // Set custom background drawable with solid color and rounded corners
+                var drawable = new Android.Graphics.Drawables.GradientDrawable();
+                drawable.SetColor(Android.Graphics.Color.ParseColor("#F5F5F5")); // Your desired background color
+                drawable.SetCornerRadius(30f); // Rounded corners
+                nativeEditor.Background = drawable;
+
+                // Optional: Set padding
+                nativeEditor.SetPadding(40, 40, 40, 40);
+            }
+#endif
+        });
+
+        
         return builder.Build();
     }
 }
