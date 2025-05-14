@@ -6,37 +6,50 @@
     <ContentPage.Content>
         
         <VerticalStackLayout 
-            Padding="30,0"
-            Spacing="25"
-            VerticalOptions="Center">
+            Padding="30,50,30,0"
+            Spacing="20"
+            VerticalOptions="Start">
                 
             <Image
                 Source="retrivo_logo.png"
-                HeightRequest="185"
+                HeightRequest="300"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
-            <Label Text="Retrivo" FontSize="50" TextColor="Black" HorizontalTextAlignment="Center" Margin="0,0,0,80"/>
-                
-            <Border Stroke = "gray" StrokeThickness="2">
+                />
+            
+            <Border Stroke = "black" StrokeThickness="2">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="45,45,45,45" />
                 </Border.StrokeShape>
-                <Entry Placeholder="Username" Margin="10,0,10,0" TextColor="Black"/>
+                <Entry Placeholder="Full Name " Margin="10,0,10,0" TextColor="Black" FontFamily="Circular"/>
             </Border>
             
-            <Border Stroke = "gray" StrokeThickness="2">
+            <Border Stroke = "black" StrokeThickness="2">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="45,45,45,45" />
                 </Border.StrokeShape>
-                <Entry Placeholder="Password" Margin="10,0,10,0" TextColor="Black"/>
+                <Entry Placeholder="Email " Margin="10,0,10,0" TextColor="Black" FontFamily="Circular"/>
+            </Border>
+            
+            <Border Stroke = "black" StrokeThickness="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="45,45,45,45" />
+                </Border.StrokeShape>
+                <Entry Placeholder="Password" Margin="10,0,10,0" TextColor="Black" FontFamily="Circular"/>
+            </Border>
+            
+            <Border Stroke = "black" StrokeThickness="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="45,45,45,45" />
+                </Border.StrokeShape>
+                <Entry Placeholder="Confirm Password " Margin="10,0,10,0" TextColor="Black" FontFamily="Circular"/>
             </Border>
                 
             <HorizontalStackLayout
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
             >
-                <CheckBox />
-                <Label Text = "Remember me" VerticalOptions="Center" FontSize="15" />
+                <CheckBox Color="DodgerBlue"/>
+                <Label Text = "I agree to the terms of User" VerticalOptions="Center" FontSize="15" FontFamily="Circular"/>
                     
             </HorizontalStackLayout>
             <Border>
@@ -45,7 +58,9 @@
                 </Border.StrokeShape>
                 <Button
                     x:Name="LoginBtn"
-                    Text="Login" 
+                    Text="Sign Up" 
+                    BackgroundColor="DodgerBlue"
+                    FontFamily="Circular_Norm"
                     Clicked="OnCounterClicked"
                     HorizontalOptions="Fill" /> 
             </Border>

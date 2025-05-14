@@ -12,7 +12,7 @@
            IsClippedToBounds="True"
            BackgroundColor="Transparent">
 
-        <Grid ColumnDefinitions="Auto,*,Auto"
+        <Grid ColumnDefinitions="70,*,70"
               HeightRequest="70"
               VerticalOptions="Start">
 
@@ -48,9 +48,16 @@
                    TextColor="White"
                    FontAttributes="Bold"
                    FontFamily="OpenSansSemibold" />
+            
+            <BoxView Grid.Column="2"
+                     WidthRequest="30"
+                     Margin="20,0"
+                     VerticalOptions="Center"
+                     HorizontalOptions="End"
+                     IsVisible="False" />
 
-            <!-- Optional Profile Icon -->
-            <!--
+                     <!-- Optional Profile Icon -->
+                     <!--
             <Image Source="profile_icon.png"
                    Grid.Column="2"
                    WidthRequest="30"

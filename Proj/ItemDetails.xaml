@@ -10,23 +10,64 @@
             <views:NavBarLayout Grid.Row="0" />
             
         <ScrollView Grid.Row="1">
-        <VerticalStackLayout Padding="20" Spacing="20">
+        <VerticalStackLayout Padding="60" Spacing="20">
             
 
-            <!-- Image Section -->
-            <Frame CornerRadius="10" HasShadow="True" Padding="0" BackgroundColor="White">
-                <Image x:Name="ItemImage" Aspect="AspectFill" HeightRequest="200"/>
-            </Frame>
+            <!--~1~ Image Section @1@
+            <Frame CornerRadius="10" HasShadow="True" Padding="0" BackgroundColor="White" HeightRequest="250">
+                <ScrollView Orientation="Both" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+                <Image x:Name="ItemImage" 
+                       Aspect="AspectFit"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="Center"
+                       HeightRequest="240"
+                       />
+                </ScrollView> 
+            </Frame>-->
             
-            <!--~1~ Back and Next Navigation @1@
-            <Grid ColumnDefinitions="*,*" Padding="10,0">
-                <Button Text="⬅" Clicked="OnBackClicked" HorizontalOptions="Start"/>
-                <Button Text="➡" Clicked="OnNextClicked" Grid.Column="1" HorizontalOptions="End"/>
-            </Grid>-->
-
+            
             <!-- Information Section -->
-            <Frame CornerRadius="15" BackgroundColor="LightGray" Padding="15" BorderColor="Gray">
-                <VerticalStackLayout Spacing="15">
+            <Frame CornerRadius="15" 
+                   HasShadow="True" 
+                   BackgroundColor="LightGray" 
+                   Padding="15" 
+                   BorderColor="Transparent"
+                   HorizontalOptions="Center"
+                   WidthRequest="330"
+                   >
+                
+                <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
+                    
+                    <!--<ScrollView Orientation="Both"
+                                HorizontalScrollBarVisibility="Never"
+                                VerticalScrollBarVisibility="Never"
+                                HeightRequest="250">-->
+                        
+                        <ScrollView Orientation="Both" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+                            <Border Stroke = "transparent" 
+                                    StrokeThickness="2"
+                                    HeightRequest="200"
+                                    WidthRequest="200"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    BackgroundColor="LightGray"
+                                    >
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20" />
+                                </Border.StrokeShape>
+                                <Image x:Name="ItemImage" 
+                                       Aspect="AspectFill"
+                                       HeightRequest="200"
+                                       WidthRequest="200"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       Margin="0"
+                                />
+                            </Border>
+                        </ScrollView> 
+                        
+                    <!--</ScrollView>>-->
+                    
                     <Label x:Name="ItemName" FontSize="24" FontAttributes="Bold"/>
                     <Label Text="INFORMATION:" FontSize="18" FontAttributes="Bold"/>
                     
@@ -55,7 +96,17 @@
                         <Label Text="Found by :" FontAttributes="Bold" />
                         <Label x:Name="ItemFounded" TextColor="Black" />
                     </VerticalStackLayout>
-                </VerticalStackLayout>
+                    
+                    <VerticalStackLayout>
+                        <Button
+                            x:Name="MessageBtn"
+                            Text="Sign Up" 
+                            BackgroundColor="DodgerBlue"
+                            FontFamily="Circular_Norm"
+                            HorizontalOptions="Fill" /> 
+                    </VerticalStackLayout>
+                    </VerticalStackLayout>
+                
             </Frame>
 
         </VerticalStackLayout>

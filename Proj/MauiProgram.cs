@@ -41,7 +41,7 @@ public static class MauiProgram
             if (handler.PlatformView is Android.Widget.EditText nativeEditor)
             {
                 // Remove underline
-                nativeEditor.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
+                nativeEditor.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.White);
 
                 // Set custom background drawable with solid color and rounded corners
                 var drawable = new Android.Graphics.Drawables.GradientDrawable();
@@ -53,6 +53,16 @@ public static class MauiProgram
                 nativeEditor.SetPadding(40, 40, 40, 40);
             }
 #endif
+        });
+        
+        builder .ConfigureFonts(fonts =>
+        {
+            fonts.AddFont("CircularStd-Bold.otf", "Circular");
+        });
+        
+        builder .ConfigureFonts(fonts =>
+        {
+            fonts.AddFont("CircularStd-Black.otf", "Circular_Norm");
         });
 
         

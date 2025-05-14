@@ -1,3 +1,14 @@
+Circular.zip
+CircularStd-Black.otf
+CircularStd-BlackItalic.otf
+CircularStd-Bold.otf
+CircularStd-BoldItalic.otf
+CircularStd-Book.otf
+CircularStd-BookItalic.otf
+CircularStd-Light Italic.otf
+CircularStd-Light.otf
+CircularStd-Medium.otf
+CircularStd-MediumItalic.otf
 FluentUI.cs
 OpenSans-Regular.ttf
 OpenSans-Semibold.ttf
@@ -59,10 +70,18 @@ dotnet_bot.scale-200.png
 dotnet_bot.scale-400.png
 headphones1.scale-100.jpg
 headphones2.scale-100.jpg
+location.scale-100.png
+menu.scale-100.png
 necklace.scale-100.jpg
+notused.scale-100.png
 phone.scale-100.jpg
+report.scale-100.png
 retrivo_logo.scale-100.png
+search.scale-100.png
 shirt.scale-100.jpg
+usc.scale-100.jpg
+usclogo.scale-100.png
+user.scale-100.png
 wallet1.scale-100.jpg
 splashSplashScreen.scale-100.png
 splashSplashScreen.scale-125.png
